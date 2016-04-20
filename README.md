@@ -1,4 +1,4 @@
-# React Sub-string Highlighter v0.0.1
+# React Substring Highlighter v0.0.1
 
 [API and Live Demo](http://smikhalevski.github.io/react-substring-highlighter/)
 

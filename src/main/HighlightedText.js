@@ -13,5 +13,7 @@ export class HighlightedText extends React.Component {
     value: string.isRequired
   };
 
-  render() {}
+  render() {
+    return <span>FOOOOOOOOOOOOO</span>;
+  }
 }
