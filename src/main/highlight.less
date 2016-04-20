@@ -1,0 +1,28 @@
+@highlight-padding-vertical:   0;
+@highlight-padding-horizontal: 4px;
+@highlight-border-radius:      3px;
+@highlight-bg:                 rgba(240,173,78,.7);
+@highlight-color:              #000;
+
+.highlight-theme(
+  @bg:    @highlight-bg;
+  @color: @highlight-color;
+) {
+  color: @color;
+  background-color: @bg;
+}
+
+.highlight {
+  position: relative;
+  vertical-align: baseline;
+  color: red;
+  line-height: 1;
+  text-decoration: inherit;
+  margin: -@highlight-padding-vertical -@highlight-padding-horizontal;
+  padding: @highlight-padding-vertical @highlight-padding-horizontal;
+  border-radius: @highlight-border-radius;
+  background-clip: padding-box;
+
+  // Default theme.
+  .highlight-theme();
+}

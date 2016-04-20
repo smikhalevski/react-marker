@@ -1,3 +1,4 @@
-import './highlighted-text.less';
+import './highlight.less';
 
-export {HighlightedText} from './HighlightedText';
+export {RangeHighlight} from './RangeHighlight';
+export {MatchHighlight} from './MatchHighlight';
