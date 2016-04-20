@@ -4,17 +4,19 @@ const {func, number, string, arrayOf, shape} = React.PropTypes;
 
 RangeHighlight.defaultProps = {
   ranges: [],
+  count: 1,
   highlight: (value, offset) => <span key={offset} className="highlight">{value}</span>
 };
 
 RangeHighlight.propTypes = {
   value: string.isRequired,
   ranges: arrayOf(shape({offset: number, length: number})),
+  count: number,
   highlight: func
 };
 
-export function RangeHighlight({value, ranges, highlight}) {
-  if (!ranges.length) {
+export function RangeHighlight({value, ranges, count, highlight}) {
+  if (!ranges.length || count <= 0) {
     return <span>{value}</span>;
   }
   let children = [],
@@ -47,6 +49,9 @@ export function RangeHighlight({value, ranges, highlight}) {
       children.push(highlight(value.substring(i, tail), i));
       head = tail;
       i = head - 1;
+      if (--count <= 0) {
+        break;
+      }
     }
   }
   if (head < value.length) {

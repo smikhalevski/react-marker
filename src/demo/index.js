@@ -7,8 +7,8 @@ import {MatchHighlight} from '../main/MatchHighlight';
 class Demo extends Component {
 
   state = {
-    lookup: /Lorem|a/,
-    count: 100
+    lookup: 'do',
+    count: 5
   };
 
   render() {
@@ -21,7 +21,7 @@ class Demo extends Component {
             <input className="form-control" value={this.state.lookup} onChange={e => this.setState({lookup: e.target.value})}/>
 
             Highlights count
-            <input type="number" className="form-control" value={this.state.count} onChange={e => this.setState({count: e.target.value})}/>
+            <input type="number" className="form-control" value={this.state.count} onChange={e => this.setState({count: e.target.value / 1})}/>
 
             <MatchHighlight lookup={this.state.lookup} count={this.state.count} value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
 

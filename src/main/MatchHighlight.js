@@ -15,10 +15,14 @@ MatchHighlight.propTypes = {
   caseInsensitive: bool
 };
 
-export function MatchHighlight({value, lookup, count, caseInsensitive}) {
+export function MatchHighlight(props) {
+  let {value, lookup, count, caseInsensitive} = props;
   let ranges = [];
   if (lookup instanceof RegExp) {
     for (let i = 0; i < value.length; ++i) {
+      if (count-- == 0) {
+        break;
+      }
       let match = value.substr(i).match(lookup);
       if (match) {
         ranges.push({offset: i + match.index, length: match[0].length});
@@ -43,5 +47,5 @@ export function MatchHighlight({value, lookup, count, caseInsensitive}) {
       i += length;
     }
   }
-  return <RangeHighlight value={value} ranges={ranges}/>;
+  return <RangeHighlight {...props} ranges={ranges}/>;
 }
