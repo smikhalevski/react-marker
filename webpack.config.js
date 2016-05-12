@@ -4,7 +4,10 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/main/index.js'
+    index: [
+      './src/main/index.js',
+      './src/main/index.less'
+    ]
   },
   output: {
     path: './target/out',
