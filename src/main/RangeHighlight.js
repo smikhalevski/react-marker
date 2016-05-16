@@ -9,14 +9,14 @@ RangeHighlight.defaultProps = {
 };
 
 RangeHighlight.propTypes = {
-  value: string.isRequired,
+  value: string,
   ranges: arrayOf(shape({offset: number, length: number})),
   count: number,
   highlight: func
 };
 
 export function RangeHighlight({value, ranges, count, highlight}) {
-  if (!ranges.length || count <= 0) {
+  if (!value || !ranges.length || count <= 0) {
     return <span>{value}</span>;
   }
   let children = [],
