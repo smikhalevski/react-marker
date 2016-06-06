@@ -1,6 +1,6 @@
 {
   "name": "react-substring-highlighter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Savva Mikhalevski",
   "description": "Plain text substring highlight component.",
   "license": "MIT",
